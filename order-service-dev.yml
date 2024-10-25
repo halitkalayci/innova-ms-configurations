@@ -1,4 +1,11 @@
 spring:
+  kafka:
+    bootstrapServer: "localhost:9092"
+    template:
+      default-topic: orderTopic
+    producer:
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
   datasource:
     url: jdbc:postgresql://localhost:5432/innovaorderservicedb
     username: postgres
